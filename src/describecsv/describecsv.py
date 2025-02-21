@@ -274,13 +274,22 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
         
         if stats["numeric_values"] is not None and stats["numeric_values"]:
             numeric_series = pd.Series(stats["numeric_values"])
-            col_analysis.update({
-                "mean_value": float(round(numeric_series.mean(), 2)),
-                "std_dev": float(round(numeric_series.std(), 2)),
-                "min_value": float(round(numeric_series.min(), 2)),
-                "max_value": float(round(numeric_series.max(), 2)),
-                "median": float(round(numeric_series.median(), 2))
-            })
+            if pd.api.types.is_bool_dtype(numeric_series):
+                col_analysis.update({
+                    "mean_value": float(numeric_series.mean()),
+                    "min_value": bool(numeric_series.min()),
+                    "max_value": bool(numeric_series.max()),
+                    "true_count": int(numeric_series.sum()),
+                    "false_count": int(len(numeric_series) - numeric_series.sum())
+                })
+            else:
+                col_analysis.update({
+                    "mean_value": float(round(numeric_series.mean(), 2)),
+                    "std_dev": float(round(numeric_series.std(), 2)),
+                    "min_value": float(round(numeric_series.min(), 2)),
+                    "max_value": float(round(numeric_series.max(), 2)),
+                    "median": float(round(numeric_series.median(), 2))
+                })
         
         elif stats["value_counts"]:
             sorted_values = sorted(stats["value_counts"].items(), key=lambda x: x[1], reverse=True)
