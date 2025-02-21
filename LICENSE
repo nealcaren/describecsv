@@ -1,7 +1,7 @@
-MIT License
+Copyright (c) 2024 Neal Caren
+>>>>>>> 549642f (build: Add PyPI packaging configuration and documentation)
 
-<<<<<<< HEAD
-Copyright (c) 2025 Neal Caren
+Permission is hereby granted, free of charge, to any person obtaining a copy
 =======
 Copyright (c) 2024 Neal Caren
 >>>>>>> 549642f (build: Add PyPI packaging configuration and documentation)
