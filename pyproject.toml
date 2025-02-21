@@ -31,7 +31,7 @@ dependencies = [
 "Bug Tracker" = "https://github.com/nealcaren/describecsv/issues"
 
 [project.scripts]
-describecsv = "describecsv:main"
+describecsv = "describecsv:cli"
 
 [tool.hatch.build]
 artifacts = [
