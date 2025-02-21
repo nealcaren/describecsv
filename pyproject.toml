@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "describecsv-nc"  # Changed to ensure unique name on PyPI
+name = "describecsv"
 version = "0.1.0"
 authors = [
   { name="Neal Caren", email="neal.caren@unc.edu" },
