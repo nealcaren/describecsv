@@ -29,6 +29,7 @@ dependencies = [
 [project.urls]
 "Homepage" = "https://github.com/nealcaren/describecsv"
 "Bug Tracker" = "https://github.com/nealcaren/describecsv/issues"
+"Documentation" = "https://github.com/nealcaren/describecsv#readme"
 
 [project.scripts]
 describecsv = "describecsv:cli"
