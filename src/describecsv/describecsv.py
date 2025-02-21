@@ -66,7 +66,18 @@ def process_csv_chunks(file_path: Path, encoding: str, chunk_size: int = 50000) 
     Yields:
         pd.DataFrame: Each chunk of the CSV file
     """
+    # First try the detected encoding
     try:
+        chunks = pd.read_csv(
+            file_path,
+            encoding=encoding,
+            chunksize=chunk_size,
+            low_memory=False,
+            on_bad_lines='warn'
+        )
+        # Test if we can actually read with this encoding
+        next(chunks)
+        # If successful, reset and yield all chunks
         chunks = pd.read_csv(
             file_path,
             encoding=encoding,
@@ -76,10 +87,47 @@ def process_csv_chunks(file_path: Path, encoding: str, chunk_size: int = 50000) 
         )
         for chunk in chunks:
             yield chunk
-    except pd.errors.ParserError:
-        raise pd.errors.ParserError(f"Could not parse CSV at {file_path}. Check the file format.")
-    except Exception as e:
-        raise RuntimeError(f"Error reading CSV: {e}")
+        return
+    except (UnicodeDecodeError, StopIteration):
+        pass
+    
+    # If that fails, try common encodings
+    for enc in ['utf-8', 'latin1', 'iso-8859-1', 'cp1252']:
+        try:
+            chunks = pd.read_csv(
+                file_path,
+                encoding=enc,
+                chunksize=chunk_size,
+                low_memory=False,
+                on_bad_lines='warn'
+            )
+            # Test if we can actually read with this encoding
+            next(chunks)
+            # If successful, reset and yield all chunks
+            chunks = pd.read_csv(
+                file_path,
+                encoding=enc,
+                chunksize=chunk_size,
+                low_memory=False,
+                on_bad_lines='warn'
+            )
+            for chunk in chunks:
+                yield chunk
+            return
+        except (UnicodeDecodeError, StopIteration):
+            continue
+    
+    # If all else fails, try with errors='replace'
+    chunks = pd.read_csv(
+        file_path,
+        encoding='latin1',
+        chunksize=chunk_size,
+        low_memory=False,
+        on_bad_lines='warn',
+        errors='replace'
+    )
+    for chunk in chunks:
+        yield chunk
 
 def optimize_dtypes(df: pd.DataFrame) -> pd.DataFrame:
     """
