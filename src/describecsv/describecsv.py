@@ -1,3 +1,12 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "pandas",
+#     "chardet",
+#     "tqdm"
+# ]
+# ///
+
 import pandas as pd
 import chardet
 import json
