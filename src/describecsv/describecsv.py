@@ -172,7 +172,9 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
     # Initialize aggregation variables
     total_rows = 0
     total_missing = 0
+    duplicate_count = 0
     column_stats = {}
+    seen_rows = set()  # For tracking duplicates
     
     # Process file in chunks
     chunks = process_csv_chunks(file_path, encoding)
@@ -186,6 +188,14 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
             
         total_rows += len(chunk)
         total_missing += chunk.isna().sum().sum()
+        
+        # Check for duplicates
+        chunk_tuples = [tuple(row) for _, row in chunk.iterrows()]
+        for row in chunk_tuples:
+            if row in seen_rows:
+                duplicate_count += 1
+            else:
+                seen_rows.add(row)
         
         # Update column statistics
         for col in columns:
@@ -242,7 +252,9 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
             "num_columns": int(len(columns)),
             "total_cells": int(total_rows * len(columns)),
             "missing_cells": int(total_missing),
-            "missing_percentage": float(round((total_missing / (total_rows * len(columns))) * 100, 2))
+            "missing_percentage": float(round((total_missing / (total_rows * len(columns))) * 100, 2)),
+            "duplicate_rows": int(duplicate_count),
+            "duplicate_percentage": float(round((duplicate_count / total_rows) * 100, 2))
         },
         "column_analysis": {}
     }
