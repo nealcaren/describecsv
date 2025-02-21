@@ -231,7 +231,13 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
                         stats["numeric_suggestion"] = "Column contains mostly numeric values"
                         if stats["numeric_values"] is None:
                             stats["numeric_values"] = []
+                            stats["non_numeric_values"] = {}
                         stats["numeric_values"].extend(numeric_data.dropna())
+                        # Track non-numeric values
+                        non_numeric_mask = numeric_data.isna() & chunk[col].notna()
+                        non_numeric_values = chunk[col][non_numeric_mask].value_counts()
+                        for val, count in non_numeric_values.items():
+                            stats["non_numeric_values"][val] = stats["non_numeric_values"].get(val, 0) + count
                 except:
                     pass
                 
@@ -312,6 +318,12 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
                     "max_value": float(round(numeric_series.max(), 2)),
                     "median": float(round(numeric_series.median(), 2))
                 }
+                # Add non-numeric value counts
+                if stats["non_numeric_values"]:
+                    sorted_non_numeric = sorted(stats["non_numeric_values"].items(), key=lambda x: x[1], reverse=True)
+                    col_analysis["non_numeric_values"] = {
+                        str(k): int(v) for k, v in sorted_non_numeric
+                    }
         
         analysis["column_analysis"][col] = col_analysis
     
