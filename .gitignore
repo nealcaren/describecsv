@@ -46,3 +46,7 @@ ENV/
 
 # OS
 .DS_Store
+
+# Environment files
+.python-version
+uv.lock
