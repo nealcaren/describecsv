@@ -328,5 +328,24 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
 
 if __name__ == "__main__":
     import sys
-    from . import cli
-    cli()
+    if len(sys.argv) != 2:
+        print("Usage: python describecsv.py <path_to_csv>")
+        sys.exit(1)
+        
+    file_path = sys.argv[1]
+    try:
+        result = analyze_csv(file_path)
+        
+        # Create output filename
+        input_path = Path(file_path)
+        output_path = input_path.with_name(f"{input_path.stem}_details.json")
+        
+        # Save to file
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(result, f, indent=2)
+            
+        print(f"Analysis saved to: {output_path}")
+        
+    except Exception as e:
+        print(f"Error analyzing CSV: {e}")
+        sys.exit(1)
