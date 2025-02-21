@@ -15,6 +15,8 @@
 import pandas as pd
 import chardet
 import json
+import os
+from datetime import datetime
 from typing import Dict, Any, Optional, Generator
 from pathlib import Path
 from tqdm import tqdm
@@ -221,8 +223,21 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
                     stats["unique_values"].update(chunk[col].dropna().unique())
     
     # Compile final analysis
+    # Get file information
+    file_stat = file_path.stat()
+    file_info = {
+        "file_name": file_path.name,
+        "directory": str(file_path.parent.absolute()),
+        "size_bytes": file_stat.st_size,
+        "size_mb": round(file_stat.st_size / (1024 * 1024), 2),
+        "created_date": datetime.fromtimestamp(file_stat.st_ctime).isoformat(),
+        "modified_date": datetime.fromtimestamp(file_stat.st_mtime).isoformat(),
+        "encoding": encoding
+    }
+
     analysis = {
         "basic_info": {
+            "file_info": file_info,
             "num_rows": int(total_rows),
             "num_columns": int(len(columns)),
             "total_cells": int(total_rows * len(columns)),
