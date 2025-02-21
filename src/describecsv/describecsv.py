@@ -317,8 +317,14 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
     
     return analysis
 
-def main(file_path: str) -> None:
+def main() -> None:
     """Main function to run the analysis and handle errors."""
+    import sys
+    if len(sys.argv) != 2:
+        print("Usage: describecsv <path_to_csv>")
+        sys.exit(1)
+        
+    file_path = sys.argv[1]
     try:
         result = analyze_csv(file_path)
         
@@ -334,7 +340,7 @@ def main(file_path: str) -> None:
         
     except Exception as e:
         print(f"Error analyzing CSV: {e}")
-        raise
+        sys.exit(1)
 
 if __name__ == "__main__":
     import sys
