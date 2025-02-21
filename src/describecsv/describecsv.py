@@ -199,12 +199,17 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
             stats = column_stats[col]
             stats["missing_count"] += chunk[col].isna().sum()
             
+            # Check if column is numeric
             if pd.api.types.is_numeric_dtype(chunk[col]):
                 valid_data = chunk[col].dropna()
                 if len(valid_data) > 0:
                     stats["numeric_values"].extend(valid_data)
             
-            elif pd.api.types.is_string_dtype(chunk[col]):
+            # Handle string and object columns that are primarily strings
+            elif pd.api.types.is_string_dtype(chunk[col]) or (
+                pd.api.types.is_object_dtype(chunk[col]) and 
+                chunk[col].dropna().apply(lambda x: isinstance(x, str)).mean() > 0.9
+            ):
                 value_counts = chunk[col].value_counts()
                 for val, count in value_counts.items():
                     stats["value_counts"][val] = stats["value_counts"].get(val, 0) + count
