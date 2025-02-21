@@ -32,3 +32,12 @@ dependencies = [
 
 [project.scripts]
 describecsv = "describecsv:main"
+
+[tool.hatch.build]
+artifacts = [
+    "*.pyc",
+    "__pycache__",
+]
+
+[tool.hatch.build.targets.wheel.scripts]
+describecsv = "chmod +x {target}"
