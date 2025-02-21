@@ -9,6 +9,7 @@
 #     "pytz>=2023.3",
 #     "tzdata>=2023.3"
 # ]
+# entry-points = { describecsv = "describecsv:main" }
 # ///
 
 import pandas as pd
