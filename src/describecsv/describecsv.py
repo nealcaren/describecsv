@@ -188,12 +188,16 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
         # Update column statistics
         for col in columns:
             if col not in column_stats:
+                is_string_like = (pd.api.types.is_string_dtype(chunk[col]) or 
+                                (pd.api.types.is_object_dtype(chunk[col]) and 
+                                 chunk[col].dropna().apply(lambda x: isinstance(x, str)).mean() > 0.9))
+                
                 column_stats[col] = {
                     "data_type": str(chunk[col].dtype),
                     "unique_values": set(),
                     "missing_count": 0,
                     "numeric_values": [] if pd.api.types.is_numeric_dtype(chunk[col]) else None,
-                    "value_counts": {} if pd.api.types.is_string_dtype(chunk[col]) else None
+                    "value_counts": {} if is_string_like else None
                 }
             
             stats = column_stats[col]
