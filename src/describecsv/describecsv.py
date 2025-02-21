@@ -221,11 +221,21 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
                 if len(valid_data) > 0:
                     stats["numeric_values"].extend(valid_data)
             
-            # Handle string and object columns that are primarily strings
-            elif pd.api.types.is_string_dtype(chunk[col]) or (
-                pd.api.types.is_object_dtype(chunk[col]) and 
-                chunk[col].dropna().apply(lambda x: isinstance(x, str)).mean() > 0.9
-            ):
+            # Handle string and object columns
+            elif pd.api.types.is_string_dtype(chunk[col]) or pd.api.types.is_object_dtype(chunk[col]):
+                # Try to convert to numeric if possible
+                try:
+                    numeric_data = pd.to_numeric(chunk[col].dropna(), errors='coerce')
+                    numeric_ratio = numeric_data.notna().mean()
+                    if numeric_ratio > 0.8:  # If more than 80% can be converted to numbers
+                        stats["numeric_suggestion"] = "Column contains mostly numeric values"
+                        if stats["numeric_values"] is None:
+                            stats["numeric_values"] = []
+                        stats["numeric_values"].extend(numeric_data.dropna())
+                except:
+                    pass
+                
+                # Process as string if we have value_counts
                 if stats["value_counts"] is not None:  # Only process if value_counts exists
                     value_counts = chunk[col].value_counts()
                     for val, count in value_counts.items():
@@ -291,6 +301,17 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
             
             if len(stats["unique_values"]) < total_rows * 0.05:
                 col_analysis["optimization_suggestion"] = "Consider using category dtype"
+            
+            if "numeric_suggestion" in stats:
+                col_analysis["data_quality_note"] = "Column contains mostly numeric values stored as strings"
+                numeric_series = pd.Series(stats["numeric_values"])
+                col_analysis["numeric_summary"] = {
+                    "mean_value": float(round(numeric_series.mean(), 2)),
+                    "std_dev": float(round(numeric_series.std(), 2)),
+                    "min_value": float(round(numeric_series.min(), 2)),
+                    "max_value": float(round(numeric_series.max(), 2)),
+                    "median": float(round(numeric_series.median(), 2))
+                }
         
         analysis["column_analysis"][col] = col_analysis
     
