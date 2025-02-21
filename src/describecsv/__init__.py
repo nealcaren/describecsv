@@ -2,7 +2,7 @@
 
 from .describecsv import main
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 def cli():
     """Entry point for the command line interface."""
