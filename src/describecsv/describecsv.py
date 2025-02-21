@@ -220,6 +220,7 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
                 valid_data = chunk[col].dropna()
                 if len(valid_data) > 0:
                     stats["numeric_values"].extend(valid_data)
+                    stats["unique_values"].update(valid_data.unique())
             
             # Handle string and object columns
             elif pd.api.types.is_string_dtype(chunk[col]) or pd.api.types.is_object_dtype(chunk[col]):
