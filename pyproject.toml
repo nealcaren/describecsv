@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "describecsv"
-version = "0.1.2"
+version = "0.1.3"
 authors = [
   { name="Neal Caren", email="neal.caren@unc.edu" },
 ]
