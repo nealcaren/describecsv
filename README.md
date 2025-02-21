@@ -1,5 +1,9 @@
 # DescribeCSV
 
+[![PyPI version](https://badge.fury.io/py/describecsv.svg)](https://badge.fury.io/py/describecsv)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+
 A Python tool for analyzing and describing CSV files. It provides detailed information about file structure, data types, missing values, and statistical summaries. Perfect for initial data exploration and quality assessment of large CSV files.
 
 ## Features
