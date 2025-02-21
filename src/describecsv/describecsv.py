@@ -317,14 +317,17 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
     
     return analysis
 
-def main() -> None:
+def main(args=None) -> None:
     """Main function to run the analysis and handle errors."""
     import sys
-    if len(sys.argv) != 2:
+    if args is None:
+        args = sys.argv[1:]
+    
+    if not args or len(args) != 1:
         print("Usage: describecsv <path_to_csv>")
         sys.exit(1)
         
-    file_path = sys.argv[1]
+    file_path = args[0]
     try:
         result = analyze_csv(file_path)
         
@@ -343,9 +346,4 @@ def main() -> None:
         sys.exit(1)
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) != 2:
-        print("Usage: python script.py <path_to_csv>")
-        sys.exit(1)
-    
-    main(sys.argv[1])
+    main()
