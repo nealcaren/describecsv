@@ -214,10 +214,11 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
                 pd.api.types.is_object_dtype(chunk[col]) and 
                 chunk[col].dropna().apply(lambda x: isinstance(x, str)).mean() > 0.9
             ):
-                value_counts = chunk[col].value_counts()
-                for val, count in value_counts.items():
-                    stats["value_counts"][val] = stats["value_counts"].get(val, 0) + count
-                stats["unique_values"].update(chunk[col].dropna().unique())
+                if stats["value_counts"] is not None:  # Only process if value_counts exists
+                    value_counts = chunk[col].value_counts()
+                    for val, count in value_counts.items():
+                        stats["value_counts"][val] = stats["value_counts"].get(val, 0) + count
+                    stats["unique_values"].update(chunk[col].dropna().unique())
     
     # Compile final analysis
     analysis = {
