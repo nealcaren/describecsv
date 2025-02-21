@@ -1,9 +1,13 @@
 # /// script
 # requires-python = ">=3.10"
 # dependencies = [
-#     "pandas",
-#     "chardet",
-#     "tqdm"
+#     "pandas>=2.0.0",
+#     "chardet>=5.0.0",
+#     "tqdm>=4.65.0",
+#     "numpy>=1.24.0",
+#     "python-dateutil>=2.8.0",
+#     "pytz>=2023.3",
+#     "tzdata>=2023.3"
 # ]
 # ///
 
