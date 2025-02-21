@@ -213,11 +213,11 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
     # Compile final analysis
     analysis = {
         "basic_info": {
-            "num_rows": total_rows,
-            "num_columns": len(columns),
-            "total_cells": total_rows * len(columns),
+            "num_rows": int(total_rows),
+            "num_columns": int(len(columns)),
+            "total_cells": int(total_rows * len(columns)),
             "missing_cells": int(total_missing),
-            "missing_percentage": round((total_missing / (total_rows * len(columns))) * 100, 2)
+            "missing_percentage": float(round((total_missing / (total_rows * len(columns))) * 100, 2))
         },
         "column_analysis": {}
     }
@@ -226,19 +226,19 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
     for col, stats in column_stats.items():
         col_analysis = {
             "data_type": stats["data_type"],
-            "unique_value_count": len(stats["unique_values"]),
-            "missing_value_count": stats["missing_count"],
-            "missing_percentage": round((stats["missing_count"] / total_rows) * 100, 2)
+            "unique_value_count": int(len(stats["unique_values"])),
+            "missing_value_count": int(stats["missing_count"]),
+            "missing_percentage": float(round((stats["missing_count"] / total_rows) * 100, 2))
         }
         
         if stats["numeric_values"] is not None and stats["numeric_values"]:
             numeric_series = pd.Series(stats["numeric_values"])
             col_analysis.update({
-                "mean_value": round(numeric_series.mean(), 2),
-                "std_dev": round(numeric_series.std(), 2),
-                "min_value": round(numeric_series.min(), 2),
-                "max_value": round(numeric_series.max(), 2),
-                "median": round(numeric_series.median(), 2)
+                "mean_value": float(round(numeric_series.mean(), 2)),
+                "std_dev": float(round(numeric_series.std(), 2)),
+                "min_value": float(round(numeric_series.min(), 2)),
+                "max_value": float(round(numeric_series.max(), 2)),
+                "median": float(round(numeric_series.median(), 2))
             })
         
         elif stats["value_counts"]:
