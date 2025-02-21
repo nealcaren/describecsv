@@ -39,5 +39,8 @@ artifacts = [
     "__pycache__",
 ]
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/describecsv"]
+
 [tool.hatch.build.targets.wheel.scripts]
 describecsv = "chmod +x {target}"
