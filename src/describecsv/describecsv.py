@@ -1,5 +1,5 @@
 # /// script
-# requires-python = ">=3.11"
+# requires-python = ">=3.10"
 # dependencies = [
 #     "pandas",
 #     "chardet",
@@ -25,17 +25,29 @@ def detect_encoding(file_path: Path, sample_size: int = 100000) -> str:
     Returns:
         str: Detected encoding
     """
+    common_encodings = ['utf-8', 'latin1', 'iso-8859-1', 'cp1252', 'ascii']
+    
+    # First try chardet
     try:
         with open(file_path, 'rb') as file:
             raw_data = file.read(sample_size)
             result = chardet.detect(raw_data)
-            encoding = result.get('encoding', 'utf-8')
-            confidence = result.get('confidence', 0)
-            
-            # If confidence is low, default to utf-8
-            return encoding if confidence > 0.8 else 'utf-8'
-    except Exception as e:
-        raise RuntimeError(f"Error detecting file encoding: {e}")
+            if result['confidence'] > 0.8:
+                return result['encoding']
+    except Exception:
+        pass
+
+    # If chardet fails or has low confidence, try common encodings
+    for encoding in common_encodings:
+        try:
+            with open(file_path, 'r', encoding=encoding) as file:
+                file.read(sample_size)
+                return encoding
+        except UnicodeDecodeError:
+            continue
+    
+    # If all else fails, return latin1 which can read any byte stream
+    return 'latin1'
 
 def process_csv_chunks(file_path: Path, encoding: str, chunk_size: int = 50000) -> Generator[pd.DataFrame, None, None]:
     """
