@@ -1,0 +1,54 @@
+Primary_Department,Primary_Number,Primary_Section,Course_Name,Instructor,Schedule,Location,SOCI_Seats,Available_Seats,Total_Seats,Current_Enrollment,Crosslisted_Seats,Crosslisted_With
+SOCI,71,001,Fys: Pursuit Of Happiness,"KALLEBERG,ARNE L",TTH 09:30 AM-10:45 AM,Mitchell Hall-Rm 121A,24,24,24,0,,
+SOCI,89H,001,Fys: Special Topics,"Baker,Regina Smalls",TTH 09:30 AM-10:45 AM,Hamilton Hall-Rm 0151,22,22,22,0,,
+SOCI,101,001,Soc Perspectives,"Lammers,Matthew Thomas",MWF 12:20 PM-01:10 PM,Hanes Art Center-Rm 0121,200,200,200,0,,
+SOCI,101,002,Soc Perspectives,"Ravenelle,Alexandrea J",TTH 11:00 AM-12:15 PM,Wilson Hall-Rm 0107,95,95,95,0,,
+SOCI,101,003,Soc Perspectives,"Gardner,Anna",MWF 10:10 AM-11:00 AM,Peabody Hall-Rm 2024,40,40,40,0,,
+SOCI,101,004,Soc Perspectives,"Shelton-Ormond,Anna Holliday",MWF 10:10 AM-11:00 AM,Peabody Hall-Rm 3050,40,40,40,0,,
+SOCI,101,005,Soc Perspectives,"Sinclair,Anna Christine",MWF 03:35 PM-04:25 PM,Greenlaw Hall-Rm 0302,40,40,40,0,,
+SOCI,101,006,Soc Perspectives,Instructor(s) TBD,TTH 11:00 AM-12:15 PM,Peabody Hall-Rm 2024,48,48,48,0,,
+SOCI,101,007,Soc Perspectives,Instructor(s) TBD,TTH 02:00 PM-03:15 PM,Fetzer Hall-Rm 0106,65,65,65,0,,
+SOCI,101,008,Soc Perspectives,Instructor(s) TBD,MWF 02:30 PM-03:20 PM,Dey Hall-Rm 0305,58,58,58,0,,
+SOCI,111,001,Human Societies,"GUO,GUANG",TTH 03:30 PM-04:45 PM,Wilson Hall-Rm 0128,65,65,65,0,,
+SOCI,112,001,Social Interaction,"Vo,Austin Hoang-Nam",MWF 12:20 PM-01:10 PM,Bingham Hall-Rm 3006,40,40,40,0,,
+SOCI,121,002,Pop Probs,"CAI,YONG",TTH 12:30 PM-01:45 PM,Wilson Hall-Rm 0128,65,65,65,0,,
+SOCI,121,001,Pop Probs,"CAI,YONG",TTH 09:30 AM-10:45 AM,Peabody Hall-Rm 2024,48,48,48,0,,
+SOCI,122,001,Race & Ethnicity,"Fitzgerald,Kathleen Joy",TTH 02:00 PM-03:15 PM,Bingham Hall-Rm 1014,48,48,48,0,,
+SOCI,122,002,Race & Ethnicity,"Rosa-Lebron,Rocio Ariana",MWF 01:25 PM-02:15 PM,Peabody Hall-Rm 2024,40,40,40,0,,
+SOCI,123,001,Crime & Cj,"Sola,Justin Lucas",TTH 05:00 PM-06:15 PM,Sitterson Hall (inc-Rm FB009,64,64,64,0,,
+SOCI,123,002,Crime & Cj,"Brown,Sarah McGill",TTH 08:00 AM-09:15 AM,Peabody Hall-Rm 2024,40,40,40,0,,
+SOCI,124,001,Sex & Gen In Soc,"Martinez Echague,Maria Ines",TTH 05:00 PM-06:15 PM,Peabody Hall-Rm 2024,35,40,40,0,WGST: 5,WGST 124-002
+SOCI,124,002,Sex & Gen In Soc,"Casey,Patrick E",MWF 09:05 AM-09:55 AM,Peabody Hall-Rm 2024,35,40,40,0,WGST: 5,WGST 124-003
+SOCI,129,001,Sociology Of Religion,"Palomo,Johannah Elisabeth",MWF 09:05 AM-09:55 AM,Bingham Hall-Rm 1014,40,40,40,0,,
+SOCI,130,001,Fam & Soc,"Zhang,Man",MWF 05:00 PM-05:50 PM,Gardner Hall-Rm 0007,40,40,40,0,,
+SOCI,130,002,Fam & Soc,"Fitzgerald,Kathleen Joy",TTH 08:00 AM-09:15 AM,Mitchell Hall-Rm 0005,100,100,100,0,,
+SOCI,131,001,Soc Rel In Workplac,"Janko,Erica Chaya",MWF 09:05 AM-09:55 AM,"Global Education, F-Rm 1005",6,40,40,0,MNGT: 34,MNGT 131-001
+SOCI,172,002,Intro U.S. Population Health,"Riley,Meredith Caroline",MWF 03:35 PM-04:25 PM,Peabody Hall-Rm 2024,40,40,40,0,,
+SOCI,172,001,Intro U.S. Population Health,"Ro,Alexandra",MWF 12:20 PM-01:10 PM,Peabody Hall-Rm 2024,40,40,40,0,,
+SOCI,180,002,Intro Global Population Health,"Stoutamire,Bethany Danielle",MWF 02:30 PM-03:20 PM,Murray Hall-Rm G201,40,40,40,0,,
+SOCI,180,001,Intro Global Population Health,"Frankenberg,Elizabeth Alice",TTH 03:30 PM-04:45 PM,Coker Hall-Rm 0201,186,186,186,0,,
+SOCI,250,001,Sociol Thry,"Conley,Jacob Brennan",MWF 03:35 PM-04:25 PM,Stone Center-Rm 0210,40,40,40,0,,
+SOCI,251,001,Research Methods,"Klaunig,Katharina Luise",MWF 09:05 AM-09:55 AM,Dey Hall-Rm 0305,40,40,40,0,,
+SOCI,252,001,Data Analysis,"Brehm,Christopher Kendrick",MWF 12:20 PM-01:10 PM,Murphey Hall-Rm 0104,40,40,40,0,,
+SOCI,252,002,Data Analysis,"Mancilla Uribe,Jorge Luis",MWF 09:05 AM-09:55 AM,Phillips Hall-Rm 0328,40,40,40,0,,
+SOCI,273,001,"Social & Econ Justice, Ee","Fitzgerald,Kathleen Joy",TTH 05:00 PM-06:15 PM,Greenlaw Hall-Rm 0101,100,100,100,0,,
+SOCI,274,001,Social & Econ Justice,"CAREN,NEAL P",TTH 12:30 PM-01:45 PM,Genome Sciences Bui-Rm 1370,19,19,19,0,,
+SOCI,290H,001,Spcl Tpcs In Soci,Instructor(s) TBD,TTH 09:30 AM-10:45 AM,Dey Hall-Rm 0412,24,24,24,0,,
+SOCI,318,001,Computational Sociology,"Duxbury,Scott",TTH 12:30 PM-01:45 PM,Peabody Hall-Rm 2024,32,32,32,0,,
+SOCI,318,002,Computational Sociology,"Sola,Justin Lucas",TTH 03:30 PM-04:45 PM,Peabody Hall-Rm 2024,32,32,32,0,,
+SOCI,393,001,Indep Exper Intern,Instructor(s) TBD,Schedule unknown,Room unknown,1,9,9,0,"MNGT: 3, MNGT: 5","MNGT 223-002, MNGT 365-006"
+SOCI,410,001,Formal Org & Burcy,"Lammers,Matthew Thomas",MWF 09:05 AM-09:55 AM,Gardner Hall-Rm 0210,8,48,48,0,MNGT: 40,MNGT 410-001
+SOCI,410,002,Formal Org & Burcy,"Wertsching,Jenna Louise",MWF 10:10 AM-11:00 AM,Phillips Hall-Rm 0328,8,40,40,0,MNGT: 32,MNGT 410-002
+SOCI,412,001,Social Strat,"Jenkins,Tania Marie",TTH 08:00 AM-09:15 AM,"Global Education, F-Rm 1005",24,64,64,0,MNGT: 40,MNGT 412-001
+SOCI,415,001,Economy And Society,"Lammers,Matthew Thomas",MWF 02:30 PM-03:20 PM,Peabody Hall-Rm 2024,10,48,48,0,MNGT: 38,MNGT 415-001
+SOCI,420,001,Poli Soci,"Ginn,Jacob Solomon",MWF 01:25 PM-02:15 PM,"Global Education, F-Rm 1005",40,40,40,0,,
+SOCI,422,001,Soci Ment Hlth Ill,Instructor(s) TBD,MWF 08:00 AM-08:50 AM,Wilson Hall-Rm 0128,65,65,65,0,,
+SOCI,424,001,Law & Society,"Brewington,Braxton Dedric",MWF 09:05 AM-09:55 AM,Greenlaw Hall-Rm 0302,40,40,40,0,,
+SOCI,426,001,Soci Of Educ,"Mooney,Christine Ellen",MWF 11:15 AM-12:05 PM,Peabody Hall-Rm 2024,40,40,40,0,,
+SOCI,427,001,The Labor Force,"MOUW,TED",TTH 05:00 PM-06:15 PM,Fetzer Hall-Rm 0106,25,65,65,0,MNGT: 40,MNGT 427-001
+SOCI,427,002,The Labor Force,"Young,Jordan",MWF 02:30 PM-03:20 PM,Woollen Gym-Rm 0304,8,40,40,0,MNGT: 32,MNGT 427-002
+SOCI,433,001,Contemporary Immigration,"Labovitz,Emma Rebecca",MWF 01:25 PM-02:15 PM,Phillips Hall-Rm 0265,40,40,40,0,,
+SOCI,444,001,"Race, Class & Gender","Palmer,Margaret",MWF 01:25 PM-02:15 PM,Murphey Hall-Rm 0104,32,32,32,0,,
+SOCI,469,001,Health And Society,"Franklyn,Grace Elizabeth",MWF 10:10 AM-11:00 AM,New West-Rm 0219,40,40,40,0,,
+SOCI,469,003,Health And Society,"Mitchell,Denise Nicole",MWF 12:20 PM-01:10 PM,Gardner Hall-Rm 0210,40,40,40,0,,
+SOCI,691H,001,Snr Hnrs Rsrch & Semnr,"Su,Jessica",W 01:15 PM-02:30 PM,Hamilton Hall-Rm 0150,12,12,12,0,,

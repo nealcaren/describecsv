@@ -26,7 +26,7 @@ wheels = [
 
 [[package]]
 name = "describecsv"
-version = "0.1.2"
+version = "0.5.0"
 source = { editable = "." }
 dependencies = [
     { name = "chardet" },
@@ -40,13 +40,13 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "chardet", specifier = ">=5.0.0" },
-    { name = "numpy", specifier = ">=1.24.0" },
-    { name = "pandas", specifier = ">=2.0.0" },
-    { name = "python-dateutil", specifier = ">=2.8.0" },
-    { name = "pytz", specifier = ">=2023.3" },
-    { name = "tqdm", specifier = ">=4.65.0" },
-    { name = "tzdata", specifier = ">=2023.3" },
+    { name = "chardet" },
+    { name = "numpy" },
+    { name = "pandas" },
+    { name = "python-dateutil" },
+    { name = "pytz" },
+    { name = "tqdm" },
+    { name = "tzdata" },
 ]
 
 [[package]]

@@ -1,0 +1,177 @@
+{
+  "basic_info": {
+    "file_info": {
+      "file_name": "sample.csv",
+      "directory": "/Users/nealcaren/Documents/GitHub/describecsv/tests",
+      "size_bytes": 6199,
+      "size_mb": 0.01,
+      "created_date": "2025-03-19T11:21:16.332853",
+      "modified_date": "2025-03-18T08:10:06.197460",
+      "encoding": "ascii"
+    },
+    "num_rows": 53,
+    "num_columns": 13,
+    "total_cells": 689,
+    "missing_cells": 86,
+    "missing_percentage": 12.48,
+    "duplicate_rows": 0,
+    "duplicate_percentage": 0.0
+  },
+  "column_analysis": {
+    "Primary_Department": {
+      "data_type": "category",
+      "unique_value_count": 1,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "top_3_values": {
+        "SOCI": 53
+      },
+      "mode_value": "SOCI",
+      "top_3_percentage": 100.0
+    },
+    "Primary_Number": {
+      "data_type": "object",
+      "unique_value_count": 34,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 237.9,
+      "std_dev": 138.15,
+      "min_value": 71.0,
+      "max_value": 469.0,
+      "median": 176.0
+    },
+    "Primary_Section": {
+      "data_type": "int64",
+      "unique_value_count": 8,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 1.77,
+      "std_dev": 1.54,
+      "min_value": 1.0,
+      "max_value": 8.0,
+      "median": 1.0
+    },
+    "Course_Name": {
+      "data_type": "object",
+      "unique_value_count": 34,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "top_3_values": {
+        "Soc Perspectives": 8,
+        "The Labor Force": 2,
+        "Data Analysis": 2
+      },
+      "mode_value": "Soc Perspectives",
+      "top_3_percentage": 22.64
+    },
+    "Instructor": {
+      "data_type": "object",
+      "unique_value_count": 42,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "top_3_values": {
+        "Instructor(s) TBD": 6,
+        "Fitzgerald,Kathleen Joy": 3,
+        "Lammers,Matthew Thomas": 3
+      },
+      "mode_value": "Instructor(s) TBD",
+      "top_3_percentage": 22.64
+    },
+    "Schedule": {
+      "data_type": "object",
+      "unique_value_count": 18,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "top_3_values": {
+        "MWF 09:05 AM-09:55 AM": 7,
+        "MWF 12:20 PM-01:10 PM": 5,
+        "TTH 09:30 AM-10:45 AM": 4
+      },
+      "mode_value": "MWF 09:05 AM-09:55 AM",
+      "top_3_percentage": 30.19
+    },
+    "Location": {
+      "data_type": "object",
+      "unique_value_count": 30,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "top_3_values": {
+        "Peabody Hall-Rm 2024": 13,
+        "Global Education, F-Rm 1005": 3,
+        "Wilson Hall-Rm 0128": 3
+      },
+      "mode_value": "Peabody Hall-Rm 2024",
+      "top_3_percentage": 35.85
+    },
+    "SOCI_Seats": {
+      "data_type": "int64",
+      "unique_value_count": 20,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 45.36,
+      "std_dev": 36.33,
+      "min_value": 1.0,
+      "max_value": 200.0,
+      "median": 40.0
+    },
+    "Available_Seats": {
+      "data_type": "int64",
+      "unique_value_count": 15,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 50.53,
+      "std_dev": 33.8,
+      "min_value": 9.0,
+      "max_value": 200.0,
+      "median": 40.0
+    },
+    "Total_Seats": {
+      "data_type": "int64",
+      "unique_value_count": 15,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 50.53,
+      "std_dev": 33.8,
+      "min_value": 9.0,
+      "max_value": 200.0,
+      "median": 40.0
+    },
+    "Current_Enrollment": {
+      "data_type": "int64",
+      "unique_value_count": 1,
+      "missing_value_count": 0,
+      "missing_percentage": 0.0,
+      "mean_value": 0.0,
+      "std_dev": 0.0,
+      "min_value": 0.0,
+      "max_value": 0.0,
+      "median": 0.0
+    },
+    "Crosslisted_Seats": {
+      "data_type": "object",
+      "unique_value_count": 6,
+      "missing_value_count": 43,
+      "missing_percentage": 81.13,
+      "top_3_values": {
+        "MNGT: 40": 3,
+        "WGST: 5": 2,
+        "MNGT: 32": 2
+      },
+      "mode_value": "MNGT: 40",
+      "top_3_percentage": 13.21
+    },
+    "Crosslisted_With": {
+      "data_type": "object",
+      "unique_value_count": 10,
+      "missing_value_count": 43,
+      "missing_percentage": 81.13,
+      "top_3_values": {
+        "WGST 124-002": 1,
+        "WGST 124-003": 1,
+        "MNGT 131-001": 1
+      },
+      "mode_value": "WGST 124-002",
+      "top_3_percentage": 5.66
+    }
+  }
+}
