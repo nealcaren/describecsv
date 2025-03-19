@@ -60,8 +60,6 @@ def create_markdown_output(analysis: Dict[str, Any]) -> str:
             markdown += f"- **Mode:** {col_data['mode_value']}\n"
         if 'top_3_percentage' in col_data:
             markdown += f"- **Top 3 Values Percentage of Total:** {col_data['top_3_percentage']}%\n"
-        if 'optimization_suggestion' in col_data:
-            markdown += f"- **Optimization Suggestion:** {col_data['optimization_suggestion']}\n"
         if 'data_quality_note' in col_data:
             markdown += f"- **Data Quality Note:** {col_data['data_quality_note']}\n"
         if 'numeric_summary' in col_data:

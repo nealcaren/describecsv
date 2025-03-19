@@ -302,9 +302,6 @@ def analyze_csv(file_path: str) -> Dict[str, Any]:
                 "top_3_percentage": round((top_3_sum / total_rows) * 100, 2)
             })
             
-            if len(stats["unique_values"]) < total_rows * 0.05:
-                col_analysis["optimization_suggestion"] = "Consider using category dtype"
-            
             if "numeric_suggestion" in stats:
                 col_analysis["data_quality_note"] = "Column contains mostly numeric values stored as strings"
                 numeric_series = pd.Series(stats["numeric_values"])
