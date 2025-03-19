@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 import json
 
-__version__ = "0.1.4"
+__version__ = "0.5.0"
 
 def cli():
     if len(sys.argv) != 2:
